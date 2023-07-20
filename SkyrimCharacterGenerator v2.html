@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generated Skyrim Character</title>
+    <style>
+        body {
+            background-image: url('background.jpg');
+            background-size: cover;
+            text-align: center;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Generated Skyrim Character</h1>
+    <p><strong>Name:</strong> <span id="name"></span></p>
+    <p><strong>Backstory:</strong> <span id="backstory"></span></p>
+    <p><strong>Race:</strong> <span id="race"></span></p>
+    <p><strong>Hair Color:</strong> <span id="hairColor"></span></p>
+    <p><strong>Hairstyle:</strong> <span id="hairstyle"></span></p>
+    <p><strong>Beard:</strong> <span id="beard"></span></p>
+    <p><strong>Class:</strong> <span id="characterClass"></span></p>
+
+    <button onclick="generateCharacter()">Generate Character</button>
+
+    <script>
+        const backstories = [
+            "A fearless adventurer seeking glory and riches.",
+            "An exiled noble seeking revenge on their enemies.",
+            "A mysterious wanderer with a hidden past.",
+            "A skilled warrior looking to restore peace to the land.",
+            "A young farmhand who dreams of becoming a hero."
+        ];
+
+        const races = [
+            "Nord", "Imperial", "Breton", "Redguard", "High Elf", "Dark Elf", "Wood Elf", "Orc", "Khajiit", "Argonian"
+        ];
+
+        const hairColors = [
+            "Blonde", "Black", "Brown", "Red", "White", "Grey", "Green", "Blue"
+        ];
+
+        const hairstyles = [
+            "Short", "Long", "Braided", "Ponytail", "Shaved", "Curly", "Bald"
+        ];
+
+        const beards = [
+            "None", "Goatee", "Full Beard", "Stubble", "Chin Strap"
+        ];
+
+        const classes = [
+            "One-Handed Fighter", "Two-Handed Warrior", "Archer", "Mage", "Thief", "Assassin"
+        ];
+
+        function getRandomElementFromArray(array) {
+            return array[Math.floor(Math.random() * array.length)];
+        }
+
+        function generateCharacter() {
+            document.getElementById('name').innerText = getRandomElementFromArray(names);
+            document.getElementById('backstory').innerText = getRandomElementFromArray(backstories);
+            document.getElementById('race').innerText = getRandomElementFromArray(races);
+            document.getElementById('hairColor').innerText = getRandomElementFromArray(hairColors);
+            document.getElementById('hairstyle').innerText = getRandomElementFromArray(hairstyles);
+            document.getElementById('beard').innerText = getRandomElementFromArray(beards);
+            document.getElementById('characterClass').innerText = getRandomElementFromArray(classes);
+        }
+
+        const names = [
+            "Dragonborn", "Frodo", "Aragorn", "Legolas", "Gandalf", "Thorin", "Bilbo", "Eowyn", "Gimli", "Samwise"
+            // Add more names as needed
+        ];
+
+        // Generate the first character when the page loads
+        generateCharacter();
+    </script>
+</body>
+</html>
